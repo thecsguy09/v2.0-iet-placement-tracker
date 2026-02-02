@@ -151,9 +151,26 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
 
       {/* Table Container with Scroll Indicator */}
       <div className="relative">
+        {/* Scroll Indicator - Sticky to header row */}
+        <div className="pointer-events-none absolute right-4 top-[28px] z-20">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="flex flex-row items-center gap-2 rounded-full bg-background/30 border-2 border-foreground/30 px-5 py-3 text-sm text-foreground"
+          >
+            <motion.div
+              animate={{ x: [0, 4, 0, -4, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ChevronsLeftRightEllipsis className="h-4 w-4" />
+            </motion.div>
+            <span className="hidden md:block">scroll</span>
+          </motion.div>
+        </div>
+
         <div className="overflow-x-auto rounded-lg border">
           <table className="data-table min-w-full protected-content">
-            <thead>
+            <thead className="sticky top-0 z-10">
               <tr>
                 {columns.map((column) => (
                   <th key={column} className="px-4 py-3">
@@ -222,23 +239,6 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
               No records found matching your filters.
             </div>
           )}
-        </div>
-
-        {/* Scroll Indicator - Stationary visual hint */}
-        <div className="pointer-events-none absolute right-[60px] top-1/2 z-10 -translate-y-1/2">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="flex flex-row items-center gap-2 rounded-full bg-background/30 border-2 border-foreground/30 px-5 py-3 text-sm text-foreground"
-          >
-            <motion.div
-              animate={{ x: [0, 4, 0, -4, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <ChevronsLeftRightEllipsis className="h-4 w-4" />
-            </motion.div>
-            <span className="hidden md:block">scroll</span>
-          </motion.div>
         </div>
       </div>
     </div>
