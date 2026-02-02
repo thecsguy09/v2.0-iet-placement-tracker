@@ -72,15 +72,20 @@ const BatchPage = () => {
       <Header />
 
       <main className="flex-1">
+        {/* Sticky Back link */}
+        <div className="sticky top-0 z-20 bg-background/95 backdrop-blur-sm border-b border-border/50">
+          <div className="container py-3">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back to Batches
+            </Link>
+          </div>
+        </div>
+
         <div className="container py-8">
-          {/* Back link */}
-          <Link
-            to="/"
-            className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Batches
-          </Link>
 
           {/* Page title */}
           <motion.h1
