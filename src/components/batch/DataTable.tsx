@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpDown, ArrowUp, ArrowDown, X, ChevronsLeftRightEllipsis } from 'lucide-react';
+import { ArrowUpDown, ArrowUp, ArrowDown, X, MoveHorizontal } from 'lucide-react';
 import { PlacementRecord, SortConfig, SORTABLE_COLUMNS } from '@/types/placement';
 
 interface DataTableProps {
@@ -174,7 +174,7 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
                         value={filters[column] || ''}
                         onChange={(e) => handleFilterChange(column, e.target.value)}
                         onClick={(e) => e.stopPropagation()}
-                        className="data-table-filter rounded w-full min-w-[120px]"
+                        className="data-table-filter rounded"
                       />
                     </div>
                   </th>
@@ -224,14 +224,19 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
         </div>
 
         {/* Scroll Indicator - Sticky on right */}
-        <div className="pointer-events-none absolute right-[60px] top-1/2 z-10 -translate-y-1/2">
+        <div className="pointer-events-none absolute right-4 top-1/2 z-10 -translate-y-1/2">
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex flex-row items-center gap-2 rounded-full border-2 border-white/30 bg-black/30 px-5 py-3 text-sm text-white"
+            className="flex items-center gap-2 rounded-full bg-muted/80 backdrop-blur-sm px-4 py-2 text-sm text-muted-foreground"
           >
-            <ChevronsLeftRightEllipsis className="h-4 w-4" />
-            <span className="hidden md:block">scroll</span>
+            <motion.div
+              animate={{ x: [0, 4, 0, -4, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <MoveHorizontal className="h-4 w-4" />
+            </motion.div>
+            <span>scroll</span>
           </motion.div>
         </div>
       </div>
