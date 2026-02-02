@@ -29,9 +29,12 @@ const MobileCompanyCard = ({ record }: MobileCompanyCardProps) => {
   // Primary fields shown in collapsed state
   const primaryFields = ['Company', 'Job Role', 'CTC (in LPA)', 'CGPA', 'Total Offers'];
 
-  // Get all other fields for expanded state
+  // Fields to hide on mobile
+  const hiddenFields = ['S.No.'];
+
+  // Get all other fields for expanded state (excluding hidden fields)
   const otherFields = Object.keys(record).filter(
-    (key) => !primaryFields.includes(key)
+    (key) => !primaryFields.includes(key) && !hiddenFields.includes(key)
   );
 
   return (
