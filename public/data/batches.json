@@ -1,0 +1,22 @@
+{
+  "batches": [
+    {
+      "year": "2026",
+      "status": "active",
+      "label": "Batch 2026",
+      "description": "Active – Current placement season"
+    },
+    {
+      "year": "2027",
+      "status": "coming",
+      "label": "Batch 2027",
+      "description": "Coming Soon"
+    },
+    {
+      "year": "2028",
+      "status": "coming",
+      "label": "Batch 2028",
+      "description": "Coming Soon"
+    }
+  ]
+}
