@@ -20,6 +20,11 @@ const BatchPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [highlightHiringProcess, setHighlightHiringProcess] = useState(false);
 
+  // Scroll to top when page loads or year changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [year]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
