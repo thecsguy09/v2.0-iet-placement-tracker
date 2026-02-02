@@ -102,7 +102,9 @@ const CompanyModal = ({ record, isOpen, onClose, highlightHiringProcess = false 
             {/* Content - Protected from text selection */}
             <div className="custom-scrollbar max-h-[60vh] overflow-y-auto p-6 protected-content">
               <div className="grid gap-4">
-                {Object.entries(record).map(([key, value]) => (
+                {Object.entries(record)
+                  .filter(([key]) => key !== 'S.No.')
+                  .map(([key, value]) => (
                   <div
                     key={key}
                     ref={key === 'Hiring Process' ? hiringProcessRef : undefined}
