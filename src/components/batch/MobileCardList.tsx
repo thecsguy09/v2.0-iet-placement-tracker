@@ -10,6 +10,7 @@ const MobileCardList = ({ data }: MobileCardListProps) => {
     <div className="space-y-4">
       <p className="text-center text-sm text-muted-foreground">
         Tap a card to view all details
+        <span className="block text-xs mt-1">(for better usage, view on laptop)</span>
       </p>
       {data.map((record, index) => (
         <MobileCompanyCard key={record['S.No.'] || index} record={record} />

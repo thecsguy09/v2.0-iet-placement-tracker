@@ -170,11 +170,12 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
                       </button>
                       <input
                         type="text"
-                        placeholder={`Filter ${column}`}
+                        placeholder={`Filter...`}
+                        title={`Filter ${column}`}
                         value={filters[column] || ''}
                         onChange={(e) => handleFilterChange(column, e.target.value)}
                         onClick={(e) => e.stopPropagation()}
-                        className="data-table-filter rounded min-w-[120px]"
+                        className="data-table-filter rounded w-full min-w-[100px]"
                       />
                     </div>
                   </th>
@@ -223,14 +224,19 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
           )}
         </div>
 
-        {/* Scroll Indicator - Sticky on right */}
+        {/* Scroll Indicator - Stationary visual hint */}
         <div className="pointer-events-none absolute right-[60px] top-1/2 z-10 -translate-y-1/2">
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             className="flex flex-row items-center gap-2 rounded-full bg-background/30 border-2 border-foreground/30 px-5 py-3 text-sm text-foreground"
           >
-            <ChevronsLeftRightEllipsis className="h-4 w-4" />
+            <motion.div
+              animate={{ x: [0, 4, 0, -4, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ChevronsLeftRightEllipsis className="h-4 w-4" />
+            </motion.div>
             <span className="hidden md:block">scroll</span>
           </motion.div>
         </div>
