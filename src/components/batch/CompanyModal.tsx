@@ -58,26 +58,29 @@ const CompanyModal = ({ record, isOpen, onClose, highlightHiringProcess = false 
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          onClick={onClose}
+        >
           {/* Backdrop - Fixed full-screen overlay with semi-transparent background */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-background/80 backdrop-blur-sm"
             aria-hidden="true"
           />
 
-          {/* Modal - Centered in viewport */}
+          {/* Modal - Centered in viewport using flexbox */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-1/2 top-1/2 z-50 w-[calc(100%-2rem)] max-w-2xl -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl bg-card shadow-2xl"
+            className="relative z-10 w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-xl bg-card shadow-2xl"
             role="dialog"
             aria-modal="true"
+            onClick={(e) => e.stopPropagation()}
             onContextMenu={handleContextMenu}
           >
             {/* Header */}
@@ -118,7 +121,7 @@ const CompanyModal = ({ record, isOpen, onClose, highlightHiringProcess = false 
               </div>
             </div>
           </motion.div>
-        </>
+        </div>
       )}
     </AnimatePresence>
   );
