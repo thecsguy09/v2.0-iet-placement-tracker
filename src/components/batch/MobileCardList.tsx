@@ -1,56 +1,46 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { PlacementRecord } from '@/types/placement';
 import MobileCompanyCard from './MobileCompanyCard';
-import { Loader2 } from 'lucide-react';
 
 interface MobileCardListProps {
   data: PlacementRecord[];
 }
 
-const ITEMS_PER_PAGE = 10;
-
-const MobileCardList = ({ data }: MobileCardListProps) => {
-  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
-  const [isLoading, setIsLoading] = useState(false);
-  const loaderRef = useRef<HTMLDivElement>(null);
-
-  const hasMore = visibleCount < data.length;
-
-  const loadMore = useCallback(() => {
-    if (isLoading || !hasMore) return;
-    
-    setIsLoading(true);
-    // Small delay for smooth UX
-    setTimeout(() => {
-      setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, data.length));
-      setIsLoading(false);
-    }, 300);
-  }, [isLoading, hasMore, data.length]);
+// Lazy loaded card wrapper
+const LazyCard = ({ record, index }: { record: PlacementRecord; index: number }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && hasMore) {
-          loadMore();
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: '100px' }
+      { rootMargin: '100px', threshold: 0.1 }
     );
 
-    if (loaderRef.current) {
-      observer.observe(loaderRef.current);
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
     }
 
     return () => observer.disconnect();
-  }, [loadMore, hasMore]);
+  }, []);
 
-  // Reset visible count when data changes
-  useEffect(() => {
-    setVisibleCount(ITEMS_PER_PAGE);
-  }, [data]);
+  return (
+    <div ref={cardRef}>
+      {isVisible ? (
+        <MobileCompanyCard record={record} />
+      ) : (
+        <div className="h-32 animate-pulse rounded-xl bg-secondary" />
+      )}
+    </div>
+  );
+};
 
-  const visibleData = data.slice(0, visibleCount);
-
+const MobileCardList = ({ data }: MobileCardListProps) => {
   return (
     <div className="space-y-4">
       <p className="text-center text-sm text-muted-foreground">
@@ -58,24 +48,9 @@ const MobileCardList = ({ data }: MobileCardListProps) => {
         <span className="block text-xs mt-1">(for better usage, view on laptop)</span>
       </p>
       
-      {visibleData.map((record, index) => (
-        <MobileCompanyCard key={record['S.No.'] || index} record={record} />
+      {data.map((record, index) => (
+        <LazyCard key={record['S.No.'] || index} record={record} index={index} />
       ))}
-      
-      {/* Infinite scroll loader */}
-      {hasMore && (
-        <div ref={loaderRef} className="flex justify-center py-4">
-          {isLoading && (
-            <Loader2 className="h-6 w-6 animate-spin text-accent" />
-          )}
-        </div>
-      )}
-      
-      {!hasMore && data.length > ITEMS_PER_PAGE && (
-        <p className="text-center text-xs text-muted-foreground py-2">
-          All {data.length} records loaded
-        </p>
-      )}
       
       {data.length === 0 && (
         <div className="flex h-32 items-center justify-center rounded-lg border text-muted-foreground">
