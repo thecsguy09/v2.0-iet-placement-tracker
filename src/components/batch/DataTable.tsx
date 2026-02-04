@@ -151,21 +151,23 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
 
       {/* Table Container with Scroll Indicator */}
       <div className="relative">
-        {/* Scroll Indicator - Sticky to header row */}
-        <div className="pointer-events-none absolute right-4 top-[28px] z-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="flex flex-row items-center gap-2 rounded-full bg-background/30 border-2 border-foreground/30 px-5 py-3 text-sm text-foreground"
-          >
+        {/* Scroll Indicator - Fixed to viewport, tied to table horizontally */}
+        <div className="pointer-events-none sticky top-24 z-30 h-0 overflow-visible">
+          <div className="absolute right-4 top-0">
             <motion.div
-              animate={{ x: [0, 4, 0, -4, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="flex flex-row items-center gap-2 rounded-full bg-background/80 border-2 border-foreground/30 px-5 py-3 text-sm text-foreground shadow-lg backdrop-blur-sm"
             >
-              <ChevronsLeftRightEllipsis className="h-4 w-4" />
+              <motion.div
+                animate={{ x: [0, 4, 0, -4, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ChevronsLeftRightEllipsis className="h-4 w-4" />
+              </motion.div>
+              <span className="hidden md:block">scroll</span>
             </motion.div>
-            <span className="hidden md:block">scroll</span>
-          </motion.div>
+          </div>
         </div>
 
         <div className="overflow-x-auto rounded-lg border">
