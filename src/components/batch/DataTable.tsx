@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo, useCallback, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpDown, ArrowUp, ArrowDown, X, ChevronsLeftRightEllipsis } from 'lucide-react';
 import { PlacementRecord, SortConfig, SORTABLE_COLUMNS } from '@/types/placement';
@@ -12,11 +12,45 @@ interface DataTableProps {
 const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
   const [filters, setFilters] = useState<Record<string, string>>({});
   const [sortConfig, setSortConfig] = useState<SortConfig | null>(null);
+  const tableContainerRef = useRef<HTMLDivElement>(null);
+  const [indicatorPosition, setIndicatorPosition] = useState({ right: 16, visible: false });
 
   // Prevent right-click on the table (scoped protection)
   const handleContextMenu = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     return false;
+  }, []);
+
+  // Track table container position for fixed scroll indicator
+  useEffect(() => {
+    const updatePosition = () => {
+      if (tableContainerRef.current) {
+        const rect = tableContainerRef.current.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        setIndicatorPosition({
+          right: viewportWidth - rect.right + 16,
+          visible: rect.top < window.innerHeight && rect.bottom > 0
+        });
+      }
+    };
+
+    updatePosition();
+    window.addEventListener('scroll', updatePosition);
+    window.addEventListener('resize', updatePosition);
+    
+    return () => {
+      window.removeEventListener('scroll', updatePosition);
+      window.removeEventListener('resize', updatePosition);
+    };
+  }, []);
+
+  // Scroll table when indicator is clicked
+  const handleScrollIndicatorClick = useCallback(() => {
+    if (tableContainerRef.current) {
+      const container = tableContainerRef.current;
+      const scrollAmount = container.clientWidth * 0.5;
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
   }, []);
 
   // Get column headers dynamically from data
@@ -151,26 +185,30 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
 
       {/* Table Container with Scroll Indicator */}
       <div className="relative">
-        {/* Scroll Indicator - Fixed to viewport, tied to table horizontally */}
-        <div className="pointer-events-none sticky top-24 z-30 h-0 overflow-visible">
-          <div className="absolute right-4 top-0">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="flex flex-row items-center gap-2 rounded-full bg-background/80 border-2 border-foreground/30 px-5 py-3 text-sm text-foreground shadow-lg backdrop-blur-sm"
-            >
-              <motion.div
-                animate={{ x: [0, 4, 0, -4, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <ChevronsLeftRightEllipsis className="h-4 w-4" />
-              </motion.div>
-              <span className="hidden md:block">scroll</span>
-            </motion.div>
-          </div>
-        </div>
+      {/* Fixed Scroll Indicator - Viewport persistent, horizontally tied to table */}
+      {indicatorPosition.visible && (
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          onClick={handleScrollIndicatorClick}
+          className="fixed top-24 z-30 flex flex-row items-center gap-2 rounded-full bg-background/80 border-2 border-foreground/30 px-5 py-3 text-sm text-foreground shadow-lg backdrop-blur-sm cursor-pointer hover:bg-background hover:border-foreground/50 transition-colors"
+          style={{ right: indicatorPosition.right }}
+          title="Click to scroll right"
+        >
+          <motion.div
+            animate={{ x: [0, 4, 0, -4, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronsLeftRightEllipsis className="h-4 w-4" />
+          </motion.div>
+          <span className="hidden md:block">scroll</span>
+        </motion.button>
+      )}
 
-        <div className="overflow-x-auto rounded-lg border">
+      <div 
+        ref={tableContainerRef}
+        className="overflow-x-auto rounded-lg border"
+      >
           <table className="data-table min-w-full protected-content">
             <thead className="sticky top-0 z-10">
               <tr>
