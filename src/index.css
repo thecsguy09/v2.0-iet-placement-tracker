@@ -2,36 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
-/* IET DAVV Placement Dashboard Design System */
+/* IET DAVV Placement Dashboard — Blue/Indigo Theme */
 
 @layer base {
   :root {
-    /* Dark theme by default */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    /* Dark blue gradient theme */
+    --background: 224 50% 5%;
+    --foreground: 0 0% 100%;
 
     /* Card colors */
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 224 50% 8%;
+    --card-foreground: 0 0% 100%;
 
     /* Popover/Modal colors */
-    --popover: 222 47% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 224 50% 10%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Primary - Light for contrast */
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 11%;
+    /* Primary - White for contrast */
+    --primary: 0 0% 100%;
+    --primary-foreground: 224 50% 8%;
 
     /* Secondary */
-    --secondary: 217 33% 14%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 224 40% 14%;
+    --secondary-foreground: 0 0% 100%;
 
     /* Muted colors */
-    --muted: 217 33% 14%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 224 40% 14%;
+    --muted-foreground: 220 20% 70%;
 
-    /* Accent - Teal */
-    --accent: 173 58% 45%;
+    /* Accent - Blue */
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
 
     /* Success - Green */
@@ -43,57 +43,57 @@
     --warning-foreground: 0 0% 100%;
 
     /* Destructive - Red */
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
     /* Border and input */
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 173 58% 45%;
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
     /* Table specific */
-    --table-header: 222 47% 12%;
-    --table-header-foreground: 210 40% 98%;
-    --table-row-hover: 222 47% 10%;
-    --table-border: 217 33% 20%;
+    --table-header: 224 65% 20%;
+    --table-header-foreground: 213 60% 90%;
+    --table-row-hover: 224 50% 12%;
+    --table-border: 220 30% 22%;
 
     /* Badge colors */
     --badge-active: 142 71% 45%;
     --badge-coming: 38 92% 50%;
 
     /* Sidebar colors */
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 224 50% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 224 40% 14%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 217 91% 60%;
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 224 50% 5%;
+    --foreground: 0 0% 100%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 224 50% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 224 50% 8%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 11%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 224 50% 8%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 224 40% 14%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 224 40% 14%;
+    --muted-foreground: 220 20% 70%;
 
-    --accent: 173 58% 45%;
+    --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
 
     --success: 142 71% 45%;
@@ -102,26 +102,26 @@
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 173 58% 45%;
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 217 91% 60%;
 
-    --table-header: 222 47% 15%;
-    --table-header-foreground: 210 40% 98%;
-    --table-row-hover: 222 47% 12%;
-    --table-border: 217 33% 20%;
+    --table-header: 224 65% 20%;
+    --table-header-foreground: 213 60% 90%;
+    --table-row-hover: 224 50% 12%;
+    --table-border: 220 30% 22%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 224 50% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 224 40% 14%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -132,7 +132,7 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-family: 'Poppins', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -160,12 +160,12 @@
   }
 
   .data-table th {
-    @apply bg-primary text-primary-foreground text-left font-medium;
+    @apply bg-table-header text-table-header-foreground text-left font-medium;
   }
 
   .data-table-filter {
-    @apply w-full bg-primary/90 border-0 border-b border-primary-foreground/20
-           text-primary-foreground placeholder:text-primary-foreground/50
+    @apply w-full bg-accent/20 border-0 border-b border-accent/30
+           text-foreground placeholder:text-muted-foreground/60
            text-sm py-1.5 px-2 focus:outline-none focus:ring-1 focus:ring-accent;
   }
 
@@ -223,11 +223,11 @@
 @layer utilities {
   /* Gradient backgrounds */
   .gradient-hero {
-    background: linear-gradient(135deg, hsl(222 47% 11% / 0.02) 0%, hsl(173 58% 39% / 0.05) 100%);
+    background: linear-gradient(135deg, hsl(224 50% 5%) 0%, hsl(230 50% 10%) 50%, hsl(240 40% 8%) 100%);
   }
 
   .gradient-card-active {
-    background: linear-gradient(135deg, hsl(173 58% 39% / 0.05) 0%, hsl(142 71% 45% / 0.05) 100%);
+    background: linear-gradient(135deg, hsl(217 91% 60% / 0.08) 0%, hsl(230 60% 50% / 0.05) 100%);
   }
 
   /* Text truncation */
@@ -240,7 +240,7 @@
 
   /* Glow effects */
   .glow-accent {
-    box-shadow: 0 0 20px hsl(173 58% 39% / 0.15), 0 0 40px hsl(173 58% 39% / 0.1);
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.15), 0 0 40px hsl(217 91% 60% / 0.1);
   }
 
   /* Protected content - disables text selection on placement data only */
@@ -249,5 +249,19 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+  }
+
+  /* Scroll arrow animation */
+  .scroll-arrow {
+    animation: bounce-x 1s infinite;
+  }
+
+  @keyframes bounce-x {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
   }
 }

@@ -5,7 +5,7 @@ import BatchSelection from '@/components/landing/BatchSelection';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="relative min-h-screen flex flex-col bg-gradient-to-br from-blue-950 via-gray-900 to-indigo-900 text-foreground">
       <Header />
       <main className="flex-1">
         <HeroSection />
