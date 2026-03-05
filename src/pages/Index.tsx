@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import BatchData from './components/BatchData'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import BatchData from '../components/BatchData'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { ArrowUpRight } from 'lucide-react'
 
 export default function App() {
