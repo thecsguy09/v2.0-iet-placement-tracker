@@ -191,7 +191,7 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onClick={handleScrollIndicatorClick}
-          className="fixed top-24 z-30 flex flex-row items-center gap-2 rounded-full bg-black/30 border-2 border-white/30 px-5 py-3 text-sm text-white shadow-lg backdrop-blur-sm cursor-pointer hover:bg-black/50 hover:border-white/50 transition-colors"
+          className="fixed top-24 z-30 flex flex-row items-center gap-2 rounded-full bg-background/80 border-2 border-foreground/30 px-5 py-3 text-sm text-foreground shadow-lg backdrop-blur-sm cursor-pointer hover:bg-background hover:border-foreground/50 transition-colors"
           style={{ right: indicatorPosition.right }}
           title="Click to scroll right"
         >

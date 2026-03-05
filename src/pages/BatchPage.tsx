@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Sparkles } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import DataTable from '@/components/batch/DataTable';
@@ -20,6 +20,7 @@ const BatchPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [highlightHiringProcess, setHighlightHiringProcess] = useState(false);
 
+  // Scroll to top when page loads or year changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [year]);
@@ -30,7 +31,11 @@ const BatchPage = () => {
         setLoading(true);
         setError(null);
         const response = await fetch(`/data/${year}.json`);
-        if (!response.ok) throw new Error('Data not available for this batch');
+
+        if (!response.ok) {
+          throw new Error('Data not available for this batch');
+        }
+
         const jsonData = await response.json();
         setData(jsonData);
       } catch (err) {
@@ -39,7 +44,10 @@ const BatchPage = () => {
         setLoading(false);
       }
     };
-    if (year) fetchData();
+
+    if (year) {
+      fetchData();
+    }
   }, [year]);
 
   const handleRowClick = (record: PlacementRecord) => {
@@ -60,13 +68,13 @@ const BatchPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-950 via-blue-950 to-gray-950 text-foreground relative">
+    <div className="flex min-h-screen flex-col">
       <Header />
 
       <main className="flex-1">
-        {/* Sticky Back link */}
-        <div className="sticky top-16 z-20 bg-gray-950/90 backdrop-blur-sm border-b border-border/50">
-          <div className="container py-3 flex items-center justify-between">
+        {/* Sticky Back link - positioned below header (h-16 = 64px) */}
+        <div className="sticky top-16 z-20 bg-background/95 backdrop-blur-sm border-b border-border/50">
+          <div className="container py-3">
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-accent"
@@ -78,15 +86,15 @@ const BatchPage = () => {
         </div>
 
         <div className="container py-8">
+
           {/* Page title */}
           <motion.h1
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="mb-8 text-xl md:text-4xl font-bold text-foreground flex items-center gap-4"
+            className="mb-8 text-3xl font-bold text-foreground md:text-4xl"
           >
-            <Sparkles size={34} className="text-blue-100 hidden md:block" />
-            Placement Data – {year} Batch
+            Placement Data – Batch {year}
           </motion.h1>
 
           {/* Loading state */}
@@ -102,7 +110,10 @@ const BatchPage = () => {
           {error && (
             <div className="flex flex-col items-center justify-center rounded-lg border border-destructive/30 bg-destructive/5 py-16">
               <p className="text-lg font-medium text-destructive">{error}</p>
-              <Link to="/" className="mt-4 text-sm text-muted-foreground hover:text-accent">
+              <Link
+                to="/"
+                className="mt-4 text-sm text-muted-foreground hover:text-accent"
+              >
                 Go back to home
               </Link>
             </div>
@@ -118,8 +129,14 @@ const BatchPage = () => {
               {isMobile ? (
                 <MobileCardList data={data} />
               ) : (
-                <DataTable data={data} onRowClick={handleRowClick} onReadMore={handleReadMore} />
+                <DataTable
+                  data={data}
+                  onRowClick={handleRowClick}
+                  onReadMore={handleReadMore}
+                />
               )}
+
+              {/* Record count */}
               <p className="mt-6 text-center text-sm text-muted-foreground">
                 Showing {data.length} placement record{data.length !== 1 ? 's' : ''}
               </p>
@@ -130,6 +147,7 @@ const BatchPage = () => {
 
       <Footer />
 
+      {/* Company Modal */}
       <CompanyModal
         record={selectedRecord}
         isOpen={isModalOpen}

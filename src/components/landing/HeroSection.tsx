@@ -3,30 +3,32 @@ import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="gradient-hero py-16 md:py-24">
       <div className="container text-center">
         <motion.h1
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl md:text-6xl font-bold text-white"
+          className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl"
         >
-          IET DAVV Placements
+          Placement Data Dashboard
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mx-auto mt-4 max-w-2xl text-lg text-blue-100 leading-tight"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
-          Company-wise IET DAVV Indore Placement Data — 2026 Batch Onwards
+          Verified campus recruitment data from IET DAVV.
+          <br className="hidden sm:block" />
+          Track companies, packages, and hiring trends across batches.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-8 flex flex-wrap items-center justify-center gap-6"
         >
           <div className="trust-badge">

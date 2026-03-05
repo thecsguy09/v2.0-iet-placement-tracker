@@ -24,46 +24,44 @@ const BatchCard = ({ batch, index }: BatchCardProps) => {
   };
 
   const cardContent = (
-    <motion.button
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
-      whileHover={isActive ? { scale: 1.02, backgroundColor: "rgba(59, 130, 246, 0.1)" } : {}}
-      whileTap={isActive ? { scale: 0.98 } : {}}
+      whileHover={isActive ? { scale: 1.02, y: -4 } : {}}
       onClick={handleClick}
-      className={`relative cursor-pointer px-8 py-4 rounded-xl flex items-center gap-3
-        backdrop-blur-sm transition-colors duration-300 w-full
-        ${isActive
-          ? 'bg-white/5 border-white/10 hover:border-white/20 text-white'
-          : 'bg-white/5 border-white/10 opacity-60 cursor-not-allowed text-white/60'}
-        border-2 shadow-lg shadow-black/10`}
+      className={`batch-card ${isActive ? 'batch-card-active' : 'batch-card-disabled'} ${
+        isActive ? 'gradient-card-active' : ''
+      }`}
     >
-      <div className="flex items-center justify-between w-full">
-        <div className="text-left">
-          <h3 className="text-base font-medium">{batch.label}</h3>
-          <p className="text-xs text-blue-200/60 mt-0.5">{batch.description}</p>
+      <div className="flex items-start justify-between">
+        <div>
+          <h3 className="text-xl font-semibold text-foreground">{batch.label}</h3>
+          <p className="mt-1 text-sm text-muted-foreground">{batch.description}</p>
         </div>
-        <div className="flex items-center gap-2">
+
+        <div className={`status-badge ${isActive ? 'status-badge-active' : 'status-badge-coming'}`}>
           {isActive ? (
-            <span className="status-badge status-badge-active text-xs">Active</span>
+            <>
+              <span className="h-1.5 w-1.5 rounded-full bg-success animate-pulse" />
+              <span>Active</span>
+            </>
           ) : (
-            <span className="status-badge status-badge-coming text-xs">
+            <>
               <Clock className="h-3 w-3" />
-              Soon
-            </span>
-          )}
-          {isActive && (
-            <motion.div
-              initial={{ x: 0 }}
-              whileHover={{ x: 3 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <ArrowRight className="w-5 h-5 text-blue-200" />
-            </motion.div>
+              <span>Soon</span>
+            </>
           )}
         </div>
       </div>
-    </motion.button>
+
+      {isActive && (
+        <div className="mt-4 flex items-center gap-1 text-sm font-medium text-accent">
+          <span>View Placements</span>
+          <ArrowRight className="h-4 w-4" />
+        </div>
+      )}
+    </motion.div>
   );
 
   if (!isActive) {
