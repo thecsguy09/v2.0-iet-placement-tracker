@@ -77,7 +77,8 @@ const CompanyModal = ({ record, isOpen, onClose, highlightHiringProcess = false 
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="relative z-10 w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-xl bg-card shadow-2xl"
+            className="relative z-10 w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-xl shadow-2xl border border-white/10"
+            style={{ background: 'rgba(0, 0, 0, 0.4)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
             role="dialog"
             aria-modal="true"
             onClick={(e) => e.stopPropagation()}
