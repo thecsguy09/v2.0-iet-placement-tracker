@@ -191,7 +191,7 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onClick={handleScrollIndicatorClick}
-          className="fixed top-24 z-30 flex flex-row items-center gap-2 rounded-full bg-background/80 border-2 border-foreground/30 px-5 py-3 text-sm text-foreground shadow-lg backdrop-blur-sm cursor-pointer hover:bg-background hover:border-foreground/50 transition-colors"
+          className="fixed top-24 z-30 flex flex-row items-center gap-2 rounded-full bg-black/40 border-2 border-white/20 px-5 py-3 text-sm text-foreground shadow-lg backdrop-blur-md cursor-pointer hover:bg-black/60 hover:border-white/40 transition-colors"
           style={{ right: indicatorPosition.right }}
           title="Click to scroll right"
         >
@@ -207,7 +207,7 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
 
       <div 
         ref={tableContainerRef}
-        className="overflow-x-auto rounded-lg border"
+        className="overflow-x-auto rounded-lg border border-white/10"
       >
           <table className="data-table min-w-full protected-content">
             <thead className="sticky top-0 z-10">

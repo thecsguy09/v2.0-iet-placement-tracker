@@ -73,7 +73,7 @@ const BatchPage = () => {
 
       <main className="flex-1">
         {/* Sticky Back link - positioned below header (h-16 = 64px) */}
-        <div className="sticky top-16 z-20 bg-background/95 backdrop-blur-sm border-b border-border/50">
+        <div className="sticky top-16 z-20 bg-black/30 backdrop-blur-md border-b border-white/10">
           <div className="container py-3">
             <Link
               to="/"

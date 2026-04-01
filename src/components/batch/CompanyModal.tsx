@@ -67,7 +67,7 @@ const CompanyModal = ({ record, isOpen, onClose, highlightHiringProcess = false 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-md"
             aria-hidden="true"
           />
 
@@ -77,23 +77,24 @@ const CompanyModal = ({ record, isOpen, onClose, highlightHiringProcess = false 
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="relative z-10 w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-xl bg-card shadow-2xl"
+            className="relative z-10 w-[calc(100%-2rem)] max-w-2xl overflow-hidden rounded-xl shadow-2xl border border-white/10"
+            style={{ background: 'rgba(0, 0, 0, 0.4)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
             role="dialog"
             aria-modal="true"
             onClick={(e) => e.stopPropagation()}
             onContextMenu={handleContextMenu}
           >
             {/* Header */}
-            <div className="flex items-center justify-between border-b bg-primary px-6 py-4">
+            <div className="flex items-center justify-between border-b border-white/10 bg-accent/10 px-6 py-4">
               <div className="protected-content">
-                <h2 className="text-xl font-bold text-primary-foreground">
+                <h2 className="text-xl font-bold text-foreground">
                   {record['Company']}
                 </h2>
-                <p className="text-sm text-primary-foreground/70">{record['Job Role']}</p>
+                <p className="text-sm text-muted-foreground">{record['Job Role']}</p>
               </div>
               <button
                 onClick={onClose}
-                className="rounded-md p-2 text-primary-foreground/70 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
               >
                 <X className="h-5 w-5" />
               </button>
