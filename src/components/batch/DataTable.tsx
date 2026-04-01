@@ -207,7 +207,7 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
 
       <div 
         ref={tableContainerRef}
-        className="overflow-x-auto rounded-lg border"
+        className="overflow-x-auto rounded-lg border border-white/10"
       >
           <table className="data-table min-w-full protected-content">
             <thead className="sticky top-0 z-10">

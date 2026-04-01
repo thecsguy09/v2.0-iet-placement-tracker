@@ -94,7 +94,7 @@ const CompanyModal = ({ record, isOpen, onClose, highlightHiringProcess = false 
               </div>
               <button
                 onClick={onClose}
-                className="rounded-md p-2 text-primary-foreground/70 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-white/10 hover:text-foreground"
               >
                 <X className="h-5 w-5" />
               </button>
