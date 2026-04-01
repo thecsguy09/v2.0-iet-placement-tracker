@@ -4,96 +4,109 @@
 @tailwind components;
 @tailwind utilities;
 
-/* IET DAVV Placement Dashboard — Dark Blue Theme (slightly lighter) */
+/* IET DAVV Placement Dashboard — Blue-Indigo Space Theme */
 
 @layer base {
   :root {
-    --background: 220 35% 12%;
-    --foreground: 210 40% 96%;
+    /* Deep navy background */
+    --background: 222 47% 5%;
+    --foreground: 0 0% 100%;
 
-    --card: 220 32% 16%;
-    --card-foreground: 210 40% 96%;
+    /* Card: glassmorphism dark */
+    --card: 220 40% 8%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 32% 17%;
-    --popover-foreground: 210 40% 96%;
+    /* Popover/Modal */
+    --popover: 220 40% 10%;
+    --popover-foreground: 0 0% 100%;
 
+    /* Primary — bright blue accent */
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 28% 20%;
-    --secondary-foreground: 210 40% 96%;
+    /* Secondary */
+    --secondary: 220 30% 14%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 25% 23%;
-    --muted-foreground: 215 20% 62%;
+    /* Muted */
+    --muted: 220 25% 16%;
+    --muted-foreground: 215 20% 65%;
 
+    /* Accent — blue luminance */
     --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
 
-    --success: 152 60% 48%;
+    /* Success — green */
+    --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
 
+    /* Warning — amber */
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
 
+    /* Destructive — red */
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 96%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 22% 24%;
-    --input: 220 22% 24%;
+    /* Border / input — subtle white borders */
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
     --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
-    --table-header: 220 32% 18%;
-    --table-header-foreground: 210 40% 96%;
-    --table-row-hover: 220 30% 19%;
-    --table-border: 220 22% 26%;
+    /* Table */
+    --table-header: 220 40% 12%;
+    --table-header-foreground: 0 0% 100%;
+    --table-row-hover: 220 35% 12%;
+    --table-border: 220 20% 22%;
 
-    --sidebar-background: 220 35% 13%;
-    --sidebar-foreground: 210 40% 96%;
+    /* Sidebar */
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 25% 23%;
-    --sidebar-accent-foreground: 210 40% 96%;
-    --sidebar-border: 220 25% 23%;
+    --sidebar-accent: 220 25% 16%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 25% 16%;
     --sidebar-ring: 217 91% 60%;
   }
 
   .dark {
-    --background: 220 35% 12%;
-    --foreground: 210 40% 96%;
-    --card: 220 32% 16%;
-    --card-foreground: 210 40% 96%;
-    --popover: 220 32% 17%;
-    --popover-foreground: 210 40% 96%;
+    --background: 222 47% 5%;
+    --foreground: 0 0% 100%;
+    --card: 220 40% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 220 40% 10%;
+    --popover-foreground: 0 0% 100%;
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 28% 20%;
-    --secondary-foreground: 210 40% 96%;
-    --muted: 220 25% 23%;
-    --muted-foreground: 215 20% 62%;
+    --secondary: 220 30% 14%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 25% 16%;
+    --muted-foreground: 215 20% 65%;
     --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
-    --success: 152 60% 48%;
+    --success: 142 71% 45%;
     --success-foreground: 0 0% 100%;
     --warning: 38 92% 50%;
     --warning-foreground: 0 0% 100%;
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 96%;
-    --border: 220 22% 24%;
-    --input: 220 22% 24%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
     --ring: 217 91% 60%;
-    --table-header: 220 32% 18%;
-    --table-header-foreground: 210 40% 96%;
-    --table-row-hover: 220 30% 19%;
-    --table-border: 220 22% 26%;
-    --sidebar-background: 220 35% 13%;
-    --sidebar-foreground: 210 40% 96%;
+    --table-header: 220 40% 14%;
+    --table-header-foreground: 0 0% 100%;
+    --table-row-hover: 220 35% 12%;
+    --table-border: 220 20% 22%;
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 25% 23%;
-    --sidebar-accent-foreground: 210 40% 96%;
-    --sidebar-border: 220 25% 23%;
+    --sidebar-accent: 220 25% 16%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 25% 16%;
     --sidebar-ring: 217 91% 60%;
   }
 }
@@ -106,10 +119,10 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Poppins', system-ui, sans-serif;
-    background: linear-gradient(145deg,
-      hsl(220 35% 11%) 0%,
-      hsl(222 32% 15%) 45%,
-      hsl(240 25% 18%) 100%
+    background: linear-gradient(135deg,
+      hsl(222 47% 5%) 0%,
+      hsl(220 40% 8%) 40%,
+      hsl(240 35% 12%) 100%
     );
     background-attachment: fixed;
   }
@@ -118,75 +131,82 @@
     @apply font-semibold tracking-tight;
   }
 
-  /* Custom scrollbar */
+  /* Custom scrollbar — dark track, blue thumb */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: hsl(222 44% 8%);
+    background: #111827;
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(222 30% 22%);
+    background: #1e3a5f;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(217 91% 50%);
+    background: #2563eb;
   }
 }
 
 @layer components {
-  /* Batch Card */
+  /* Batch Card — glassmorphism */
   .batch-card {
-    @apply relative overflow-hidden rounded-xl p-6 transition-all duration-300 bg-card;
-    border: 1px solid hsl(222 25% 20%);
+    @apply relative overflow-hidden rounded-xl p-6 transition-all duration-300;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .batch-card-active {
     @apply cursor-pointer;
   }
   .batch-card-active:hover {
-    border-color: hsl(217 91% 60% / 0.4);
-    box-shadow: 0 0 24px hsl(217 91% 60% / 0.1), 0 4px 20px rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.15), 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   .batch-card-disabled {
     @apply cursor-not-allowed opacity-60;
   }
 
-  /* Table */
+  /* Table Styles */
   .data-table {
     @apply w-full border-collapse rounded-lg overflow-hidden;
   }
 
   .data-table th {
-    @apply text-left font-semibold uppercase text-xs tracking-wider;
-    background: hsl(222 40% 13%);
-    color: hsl(210 40% 96%);
+    @apply text-left font-medium;
+    background: hsl(220 40% 12%);
+    color: hsl(0 0% 100%);
   }
 
   .data-table-filter {
-    @apply w-full border-0 border-b text-sm py-1.5 px-2 focus:outline-none focus:ring-1 rounded;
-    background: hsl(222 40% 10%);
-    border-color: hsl(222 25% 22%);
-    color: hsl(210 40% 96%);
+    @apply w-full border-0 border-b text-sm py-1.5 px-2 focus:outline-none focus:ring-1;
+    background: hsl(220 40% 10%);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: hsl(0 0% 100%);
+    focus-ring-color: hsl(217 91% 60%);
   }
   .data-table-filter::placeholder {
-    color: hsl(215 20% 45%);
+    color: rgba(255, 255, 255, 0.4);
   }
   .data-table-filter:focus {
-    border-color: hsl(217 91% 60%);
+    ring-color: hsl(217 91% 60%);
   }
 
-  /* Mobile Card */
+  /* Mobile Card — glassmorphism */
   .company-card {
-    @apply rounded-xl p-4 transition-all duration-200 bg-card;
-    border: 1px solid hsl(222 25% 20%);
+    @apply rounded-xl p-4 transition-all duration-200;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .company-card-expanded {
-    border-color: hsl(217 91% 60% / 0.35);
-    box-shadow: 0 0 12px hsl(217 91% 60% / 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 15px hsl(217 91% 60% / 0.1);
   }
 
   /* Trust Badge */
@@ -195,7 +215,7 @@
   }
 
   .trust-badge-check {
-    @apply h-4 w-4 text-success;
+    @apply h-4 w-4 text-accent;
   }
 
   /* Status Badge */
@@ -208,7 +228,7 @@
   }
 
   .status-badge-coming {
-    @apply bg-muted text-muted-foreground;
+    @apply bg-warning/10 text-warning;
   }
 
   /* Read More Link */
@@ -217,41 +237,43 @@
            text-sm font-medium transition-colors cursor-pointer;
   }
 
-  /* Scrollbar in scroll areas */
+  /* Smooth scrollbar override for scroll areas */
   .custom-scrollbar::-webkit-scrollbar {
     @apply w-2;
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
-    background: hsl(222 44% 8%);
+    background: #111827;
     border-radius: 9999px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: hsl(222 30% 22%);
+    background: #1e3a5f;
     border-radius: 9999px;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: hsl(217 91% 50%);
+    background: #2563eb;
   }
 }
 
 @layer utilities {
+  /* Hero gradient — blue-950 → gray-900 → indigo-900 */
   .gradient-hero {
-    background: linear-gradient(145deg,
-      hsl(222 44% 8% / 0.5) 0%,
-      hsl(217 91% 60% / 0.03) 50%,
-      hsl(245 30% 14% / 0.5) 100%
+    background: linear-gradient(135deg,
+      hsl(222 47% 6% / 0.6) 0%,
+      hsl(217 91% 60% / 0.05) 50%,
+      hsl(240 35% 12% / 0.6) 100%
     );
   }
 
   .gradient-card-active {
     background: linear-gradient(135deg,
-      hsl(217 91% 60% / 0.06) 0%,
-      hsl(245 30% 15% / 0.06) 100%
+      hsl(217 91% 60% / 0.08) 0%,
+      hsl(240 35% 15% / 0.08) 100%
     );
   }
 
+  /* Text truncation */
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -259,10 +281,12 @@
     overflow: hidden;
   }
 
+  /* Glow effects — blue */
   .glow-accent {
-    box-shadow: 0 0 20px hsl(217 91% 60% / 0.15), 0 0 40px hsl(217 91% 60% / 0.08);
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.2), 0 0 40px hsl(217 91% 60% / 0.1);
   }
 
+  /* Protected content */
   .protected-content {
     user-select: none;
     -webkit-user-select: none;
