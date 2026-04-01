@@ -87,10 +87,10 @@ const CompanyModal = ({ record, isOpen, onClose, highlightHiringProcess = false 
             {/* Header */}
             <div className="flex items-center justify-between border-b border-white/10 bg-accent/10 px-6 py-4">
               <div className="protected-content">
-                <h2 className="text-xl font-bold text-primary-foreground">
+                <h2 className="text-xl font-bold text-foreground">
                   {record['Company']}
                 </h2>
-                <p className="text-sm text-primary-foreground/70">{record['Job Role']}</p>
+                <p className="text-sm text-muted-foreground">{record['Job Role']}</p>
               </div>
               <button
                 onClick={onClose}
