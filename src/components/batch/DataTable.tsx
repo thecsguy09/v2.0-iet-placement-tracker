@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useRef, useEffect } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpDown, ArrowUp, ArrowDown, X, ChevronsLeftRightEllipsis } from 'lucide-react';
 import { PlacementRecord, SortConfig, SORTABLE_COLUMNS } from '@/types/placement';
