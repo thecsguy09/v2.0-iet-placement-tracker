@@ -8,7 +8,7 @@ const Header = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/30 backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-border bg-background/70 backdrop-blur-xl"
     >
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex flex-col">
