@@ -151,28 +151,18 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
 
       {/* Table Container with Scroll Indicator */}
       <div className="relative">
-      {/* Fixed Scroll Indicator - Viewport persistent, horizontally tied to table */}
-      {indicatorPosition.visible && (
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          onClick={handleScrollIndicatorClick}
-          className="fixed top-24 z-30 flex flex-row items-center gap-2 rounded-full bg-black/40 border-2 border-white/20 px-5 py-3 text-sm text-foreground shadow-lg backdrop-blur-md cursor-pointer hover:bg-black/60 hover:border-white/40 transition-colors"
-          style={{ right: indicatorPosition.right }}
-          title="Click to scroll right"
+      {/* Scroll Indicator - absolute positioned like reference */}
+      <div className="flex flex-row items-center gap-2 absolute top-[50%] right-[60px] z-30 rounded-full bg-black/30 border-2 border-white/30 px-5 py-3 cursor-default">
+        <motion.div
+          animate={{ x: [0, 4, 0, -4, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <motion.div
-            animate={{ x: [0, 4, 0, -4, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronsLeftRightEllipsis className="h-4 w-4" />
-          </motion.div>
-          <span className="hidden md:block">scroll</span>
-        </motion.button>
-      )}
+          <ChevronsLeftRightEllipsis className="h-4 w-4" />
+        </motion.div>
+        <span className="hidden md:block text-sm">scroll</span>
+      </div>
 
       <div 
-        ref={tableContainerRef}
         className="overflow-x-auto rounded-lg border border-white/10"
       >
           <table className="data-table min-w-full protected-content">
