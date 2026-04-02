@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback, useRef, useEffect } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpDown, ArrowUp, ArrowDown, X, ChevronsLeftRightEllipsis } from 'lucide-react';
 import { PlacementRecord, SortConfig, SORTABLE_COLUMNS } from '@/types/placement';
@@ -12,45 +12,11 @@ interface DataTableProps {
 const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
   const [filters, setFilters] = useState<Record<string, string>>({});
   const [sortConfig, setSortConfig] = useState<SortConfig | null>(null);
-  const tableContainerRef = useRef<HTMLDivElement>(null);
-  const [indicatorPosition, setIndicatorPosition] = useState({ right: 16, visible: false });
 
   // Prevent right-click on the table (scoped protection)
   const handleContextMenu = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     return false;
-  }, []);
-
-  // Track table container position for fixed scroll indicator
-  useEffect(() => {
-    const updatePosition = () => {
-      if (tableContainerRef.current) {
-        const rect = tableContainerRef.current.getBoundingClientRect();
-        const viewportWidth = window.innerWidth;
-        setIndicatorPosition({
-          right: viewportWidth - rect.right + 16,
-          visible: rect.top < window.innerHeight && rect.bottom > 0
-        });
-      }
-    };
-
-    updatePosition();
-    window.addEventListener('scroll', updatePosition);
-    window.addEventListener('resize', updatePosition);
-    
-    return () => {
-      window.removeEventListener('scroll', updatePosition);
-      window.removeEventListener('resize', updatePosition);
-    };
-  }, []);
-
-  // Scroll table when indicator is clicked
-  const handleScrollIndicatorClick = useCallback(() => {
-    if (tableContainerRef.current) {
-      const container = tableContainerRef.current;
-      const scrollAmount = container.clientWidth * 0.5;
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
   }, []);
 
   // Get column headers dynamically from data
@@ -185,28 +151,18 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
 
       {/* Table Container with Scroll Indicator */}
       <div className="relative">
-      {/* Fixed Scroll Indicator - Viewport persistent, horizontally tied to table */}
-      {indicatorPosition.visible && (
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          onClick={handleScrollIndicatorClick}
-          className="fixed top-24 z-30 flex flex-row items-center gap-2 rounded-full bg-black/40 border-2 border-white/20 px-5 py-3 text-sm text-foreground shadow-lg backdrop-blur-md cursor-pointer hover:bg-black/60 hover:border-white/40 transition-colors"
-          style={{ right: indicatorPosition.right }}
-          title="Click to scroll right"
+      {/* Scroll Indicator - absolute positioned like reference */}
+      <div className="flex flex-row items-center gap-2 absolute top-[50%] right-[60px] z-30 rounded-full bg-black/30 border-2 border-white/30 px-5 py-3 cursor-default">
+        <motion.div
+          animate={{ x: [0, 4, 0, -4, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <motion.div
-            animate={{ x: [0, 4, 0, -4, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronsLeftRightEllipsis className="h-4 w-4" />
-          </motion.div>
-          <span className="hidden md:block">scroll</span>
-        </motion.button>
-      )}
+          <ChevronsLeftRightEllipsis className="h-4 w-4" />
+        </motion.div>
+        <span className="hidden md:block text-sm">scroll</span>
+      </div>
 
       <div 
-        ref={tableContainerRef}
         className="overflow-x-auto rounded-lg border border-white/10"
       >
           <table className="data-table min-w-full protected-content">
