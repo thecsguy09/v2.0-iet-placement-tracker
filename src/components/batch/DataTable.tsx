@@ -12,45 +12,11 @@ interface DataTableProps {
 const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
   const [filters, setFilters] = useState<Record<string, string>>({});
   const [sortConfig, setSortConfig] = useState<SortConfig | null>(null);
-  const tableContainerRef = useRef<HTMLDivElement>(null);
-  const [indicatorPosition, setIndicatorPosition] = useState({ right: 16, visible: false });
 
   // Prevent right-click on the table (scoped protection)
   const handleContextMenu = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     return false;
-  }, []);
-
-  // Track table container position for fixed scroll indicator
-  useEffect(() => {
-    const updatePosition = () => {
-      if (tableContainerRef.current) {
-        const rect = tableContainerRef.current.getBoundingClientRect();
-        const viewportWidth = window.innerWidth;
-        setIndicatorPosition({
-          right: viewportWidth - rect.right + 16,
-          visible: rect.top < window.innerHeight && rect.bottom > 0
-        });
-      }
-    };
-
-    updatePosition();
-    window.addEventListener('scroll', updatePosition);
-    window.addEventListener('resize', updatePosition);
-    
-    return () => {
-      window.removeEventListener('scroll', updatePosition);
-      window.removeEventListener('resize', updatePosition);
-    };
-  }, []);
-
-  // Scroll table when indicator is clicked
-  const handleScrollIndicatorClick = useCallback(() => {
-    if (tableContainerRef.current) {
-      const container = tableContainerRef.current;
-      const scrollAmount = container.clientWidth * 0.5;
-      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
   }, []);
 
   // Get column headers dynamically from data
