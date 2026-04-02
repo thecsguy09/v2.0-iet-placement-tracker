@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpDown, ArrowUp, ArrowDown, X, ChevronsLeftRightEllipsis } from 'lucide-react';
+import { ArrowUpDown, ArrowUp, ArrowDown, X } from 'lucide-react';
 import { PlacementRecord, SortConfig, SORTABLE_COLUMNS } from '@/types/placement';
 
 interface DataTableProps {
@@ -149,21 +149,8 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
         </motion.div>
       )}
 
-      {/* Table Container with Scroll Indicator */}
+      {/* Table Container */}
       <div className="relative">
-      {/* Scroll Indicator - anchored to table container, not inside scrollable region */}
-      <div className="absolute inset-y-0 right-4 z-30 flex items-center pointer-events-none">
-        <div className="flex flex-row items-center gap-2 rounded-full bg-black/30 border-2 border-white/30 px-5 py-3 pointer-events-auto">
-          <motion.div
-            animate={{ x: [0, 4, 0, -4, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronsLeftRightEllipsis className="h-4 w-4" />
-          </motion.div>
-          <span className="hidden md:block text-sm">scroll</span>
-        </div>
-      </div>
-
       <div 
         className="overflow-x-auto rounded-lg border border-white/10"
       >
