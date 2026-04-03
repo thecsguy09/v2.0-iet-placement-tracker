@@ -13,7 +13,7 @@ const Header = () => {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="IET DAVV Logo" className="h-10 w-10 rounded-md" />
+          <img src={logo} alt="IET DAVV Logo" className="h-12 w-12 rounded-md" />
           <div className="flex flex-col">
             <span className="text-lg font-bold text-foreground">IET DAVV Placements</span>
             <span className="text-xs text-muted-foreground">Institute of Engineering & Technology, DAVV Indore</span>
