@@ -151,9 +151,9 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
 
       {/* Table Container */}
       <div className="relative">
-        {/* Scroll Indicator - anchored to table container */}
-        <div className="absolute top-[50%] -translate-y-1/2 right-4 z-30 pointer-events-none">
-          <div className="flex flex-row items-center gap-2 bg-black/30 border-2 border-white/30 rounded-full p-3 px-5 pointer-events-auto">
+        {/* Scroll Indicator - sticky to viewport, anchored to table right */}
+        <div className="sticky top-[50vh] float-right z-30 mr-4 -mb-14">
+          <div className="flex flex-row items-center gap-2 bg-black/30 border-2 border-white/30 rounded-full p-3 px-5">
             <motion.div
               animate={{ x: [0, 4, 0, -4, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
