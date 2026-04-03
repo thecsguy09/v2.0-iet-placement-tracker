@@ -151,6 +151,18 @@ const DataTable = ({ data, onRowClick, onReadMore }: DataTableProps) => {
 
       {/* Table Container */}
       <div className="relative">
+        {/* Scroll Indicator - anchored to table container */}
+        <div className="absolute top-[50%] -translate-y-1/2 right-4 z-30 pointer-events-none">
+          <div className="flex flex-row items-center gap-2 bg-black/30 border-2 border-white/30 rounded-full p-3 px-5 pointer-events-auto">
+            <motion.div
+              animate={{ x: [0, 4, 0, -4, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ChevronsLeftRightEllipsis className="h-4 w-4" />
+            </motion.div>
+            <span className="hidden md:block text-sm">scroll</span>
+          </div>
+        </div>
       <div 
         className="overflow-x-auto rounded-lg border border-white/10"
       >
