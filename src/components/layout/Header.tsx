@@ -15,8 +15,7 @@ const Header = () => {
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="IET DAVV Logo" className="h-10 w-10 rounded-md" />
           <div className="flex flex-col">
-            <span className="text-lg font-bold text-foreground">IET DAVV Placements</span>
-            <span className="text-xs text-muted-foreground">Institute of Engineering & Technology, DAVV Indore</span>
+            <span className="text-lg font-bold text-foreground">IET DAVV Placement Tracker</span>
           </div>
         </Link>
 
