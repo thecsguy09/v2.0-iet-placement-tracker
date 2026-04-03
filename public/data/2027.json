@@ -1,0 +1,26 @@
+[
+  {
+    "S.No.": 1,
+    "Company": "Google",
+    "CTC (in LPA)": 45,
+    "Job Role": "Software Engineer",
+    "Hiring Process": "Online Assessment → Technical Interview (3 rounds) → HR Interview",
+    "Eligible Batches": "2027"
+  },
+  {
+    "S.No.": 2,
+    "Company": "Microsoft",
+    "CTC (in LPA)": 42,
+    "Job Role": "Software Development Engineer",
+    "Hiring Process": "Coding Test → Group Discussion → Technical Interview (2 rounds) → HR Round",
+    "Eligible Batches": "2027"
+  },
+  {
+    "S.No.": 3,
+    "Company": "Amazon",
+    "CTC (in LPA)": 38,
+    "Job Role": "SDE-1",
+    "Hiring Process": "Online Assessment (2 rounds) → Technical Interview (3 rounds) → Bar Raiser Round",
+    "Eligible Batches": "2027"
+  }
+]
