@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpDown, ArrowUp, ArrowDown, X } from 'lucide-react';
+import { ArrowUpDown, ArrowUp, ArrowDown, X, ChevronsLeftRightEllipsis } from 'lucide-react';
 import { PlacementRecord, SortConfig, SORTABLE_COLUMNS } from '@/types/placement';
 
 interface DataTableProps {
