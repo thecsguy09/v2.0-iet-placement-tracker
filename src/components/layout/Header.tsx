@@ -1,6 +1,7 @@
-import { Linkedin, Github } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logo from '@/assets/logo.png';
 
 const Header = () => {
   return (
@@ -11,9 +12,12 @@ const Header = () => {
       className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/30 backdrop-blur-md"
     >
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex flex-col">
-          <span className="text-lg font-bold text-foreground">IET DAVV Placements</span>
-          <span className="text-xs text-muted-foreground">Institute of Engineering & Technology</span>
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="IET DAVV Logo" className="h-10 w-10 rounded-md" />
+          <div className="flex flex-col">
+            <span className="text-lg font-bold text-foreground">IET DAVV Placements</span>
+            <span className="text-xs text-muted-foreground">Institute of Engineering & Technology, DAVV Indore</span>
+          </div>
         </Link>
 
         <div className="flex items-center gap-4">
@@ -29,13 +33,11 @@ const Header = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="https://github.com/kunalbang"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:thecsguy09@gmail.com"
               className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-accent"
-              aria-label="GitHub"
+              aria-label="Email"
             >
-              <Github className="h-5 w-5" />
+              <Mail className="h-5 w-5" />
             </a>
           </div>
         </div>
