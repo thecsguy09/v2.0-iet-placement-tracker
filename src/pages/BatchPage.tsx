@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ChevronsLeftRightEllipsis } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import DataTable from '@/components/batch/DataTable';
@@ -69,18 +69,6 @@ const BatchPage = () => {
 
   return (
     <div className="flex min-h-screen flex-col relative">
-      {/* Scroll Indicator - page-level, absolute like reference */}
-      {!isMobile && !loading && !error && (
-        <div className="flex flex-row items-center gap-2 absolute top-[50%] right-[60px] z-30 bg-black/30 border-2 border-white/30 rounded-full p-3 px-5">
-          <motion.div
-            animate={{ x: [0, 4, 0, -4, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <ChevronsLeftRightEllipsis className="h-4 w-4" />
-          </motion.div>
-          <span className="hidden md:block text-sm">scroll</span>
-        </div>
-      )}
       <Header />
 
       <main className="flex-1">
