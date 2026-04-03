@@ -34,7 +34,7 @@
     "Job Role": "SDE, BA",
     "Eligible Batches": "All",
     "CGPA": 7,
-    "CTC (in LPA)": "-",
+    "CTC (in LPA)": "",
     "Type of Role": "Intern",
     "Duration of Internship": "12 Months",
     "Compensation in Internship": 25000,
@@ -80,7 +80,7 @@
     "Type of Role": "Intern",
     "Duration of Internship": "12 Months",
     "Compensation in Internship": 25000,
-    "Total Offers": "-",
+    "Total Offers": "",
     "Hiring Process": "-"
   },
   {
@@ -160,11 +160,11 @@
     "Job Role": "-",
     "Eligible Batches": "CS/ETC",
     "CGPA": 8.5,
-    "CTC (in LPA)": "-",
+    "CTC (in LPA)": "",
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
-    "Total Offers": "-",
+    "Total Offers": "",
     "Hiring Process": "-"
   },
   {
@@ -314,7 +314,7 @@
     "Job Role": "Graduate Engineer Trainee",
     "Eligible Batches": "All",
     "CGPA": 6.5,
-    "CTC (in LPA)": 4,
+    "CTC (in LPA)": 4.05,
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
@@ -328,7 +328,7 @@
     "Job Role": "SDE",
     "Eligible Batches": "CS/IT/ETC",
     "CGPA": 8.5,
-    "CTC (in LPA)": "12+",
+    "CTC (in LPA)": "13+",
     "Type of Role": "Intern+FTE",
     "Duration of Internship": "6 Months",
     "Compensation in Internship": 45000,
@@ -388,7 +388,7 @@
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
-    "Total Offers": "-",
+    "Total Offers": "",
     "Hiring Process": "Update: Hiring Freezed"
   },
   {
@@ -454,11 +454,11 @@
     "Job Role": "Blockchain Data & ML Engineer / Quantitative R&D Engineer",
     "Eligible Batches": "CS/IT",
     "CGPA": 7,
-    "CTC (in LPA)": "6\u201312",
+    "CTC (in LPA)": "6-12",
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
-    "Total Offers": "-",
+    "Total Offers": "",
     "Hiring Process": "Offline Programming Test, followed by Face-to-Face Technical Interview and HR Round. Focus: Job Description Requirements, Resume, Medium-level DSA, Coding, and Core Subjects"
   },
   {
@@ -468,7 +468,7 @@
     "Job Role": "Associate Software Developer",
     "Eligible Batches": "CS/IT/ETC",
     "CGPA": 7.5,
-    "CTC (in LPA)": "5\u20138",
+    "CTC (in LPA)": "5-8",
     "Type of Role": "Intern+FTE",
     "Duration of Internship": "6 Months",
     "Compensation in Internship": "-",
@@ -510,11 +510,11 @@
     "Job Role": "Security Analyst / Associate Consultant \u2013 Process Consulting",
     "Eligible Batches": "CS/IT",
     "CGPA": "-",
-    "CTC (in LPA)": "4.5\u20137",
+    "CTC (in LPA)": "4.5-7",
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
-    "Total Offers": "-",
+    "Total Offers": "",
     "Hiring Process": "-"
   },
   {
@@ -528,7 +528,7 @@
     "Type of Role": "Intern+FTE",
     "Duration of Internship": "6 Months",
     "Compensation in Internship": 20000,
-    "Total Offers": "-",
+    "Total Offers": "",
     "Hiring Process": "On-Campus OA(25-27 MCQS and 3 Easy-Medium DSA), followed by offline Hackathon(without internet/GPT), Tech Interview and HR/Manager rounds."
   },
   {
@@ -542,7 +542,7 @@
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
-    "Total Offers": "-",
+    "Total Offers": "",
     "Hiring Process": "-"
   },
   {
@@ -570,7 +570,7 @@
   "Type of Role": "FTE",
   "Duration of Internship": "-",
   "Compensation in Internship": "-",
-  "Total Offers": "-",
+  "Total Offers": "",
   "Hiring Process": "GD+L1+L2+HR. Focus: Basic communication skills, problem solving, puzzles and basics of windows and situational questions"
 },
 {
@@ -594,11 +594,11 @@
   "Job Role": "-",
   "Eligible Batches": "All",
   "CGPA": 7,
-  "CTC (in LPA)": "-",
+  "CTC (in LPA)": "",
   "Type of Role": "FTE",
   "Duration of Internship": "-",
   "Compensation in Internship": "-",
-  "Total Offers": "-",
+  "Total Offers": "",
   "Hiring Process": "Resume screening, Technical Interview 1, Technical Interview 2, HR Interview. Focus: Medium DSA, projects and core subjects"
 },
 {
