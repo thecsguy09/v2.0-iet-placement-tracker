@@ -388,7 +388,7 @@
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
-    "Total Offers": "Process Ongoing",
+    "Total Offers": "Hiring Freezed",
     "Hiring Process": "-"
   },
   {
@@ -458,7 +458,7 @@
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
-    "Total Offers": "Interviews Ongoing",
+    "Total Offers": "N/A",
     "Hiring Process": "Offline Programming Test, followed by Face-to-Face Technical Interview and HR Round. Focus: Job Description Requirements, Resume, Medium-level DSA, Coding, and Core Subjects"
   },
   {
@@ -514,8 +514,8 @@
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
-    "Total Offers": "Process Ongoing",
-    "Hiring Process": "Process Ongoing"
+    "Total Offers": "No Updates",
+    "Hiring Process": "-"
   },
   {
     "S.No.": 38,
@@ -528,7 +528,7 @@
     "Type of Role": "Intern+FTE",
     "Duration of Internship": "6 Months",
     "Compensation in Internship": 20000,
-    "Total Offers": "Process Ongoing",
+    "Total Offers": "No Updates(high chances hiring freezed/slowed)",
     "Hiring Process": "On-Campus OA(25-27 MCQS and 3 Easy-Medium DSA), followed by offline Hackathon(without internet/GPT), Tech Interview and HR/Manager rounds."
   },
   {
@@ -542,8 +542,8 @@
     "Type of Role": "FTE",
     "Duration of Internship": "-",
     "Compensation in Internship": "-",
-    "Total Offers": "Process Ongoing",
-    "Hiring Process": "Process Ongoing"
+    "Total Offers": "No Updates",
+    "Hiring Process": "-"
   },
   {
     "S.No.": 40,
@@ -570,7 +570,7 @@
   "Type of Role": "FTE",
   "Duration of Internship": "-",
   "Compensation in Internship": "-",
-  "Total Offers": "-",
+  "Total Offers": "N/A",
   "Hiring Process": "GD+L1+L2+HR. Focus: Basic communication skills, problem solving, puzzles and basics of windows and situational questions"
 },
 {
@@ -598,7 +598,7 @@
   "Type of Role": "FTE",
   "Duration of Internship": "-",
   "Compensation in Internship": "-",
-  "Total Offers": "-",
+  "Total Offers": "Process Ongoing",
   "Hiring Process": "Resume screening, Technical Interview 1, Technical Interview 2, HR Interview. Focus: Medium DSA, projects and core subjects"
 },
 {
@@ -626,7 +626,7 @@
   "Type of Role": "Intern+FTE",
   "Duration of Internship": "3-6 Months",
   "Compensation in Internship": 22500,
-  "Total Offers": "-",
+  "Total Offers": "1",
   "Hiring Process": "Offline OA + Technical + HR. Focus: Computer Networking concepts in depth, technologies like 5G, Python and similar skills"
 }
 ]
