@@ -9,8 +9,7 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <img src={logo} alt="IET DAVV Logo" className="h-10 w-10 rounded-md" />
             <div className="text-center sm:text-left">
-              <p className="font-semibold text-foreground">IET DAVV Placement Data</p>
-              <p className="text-xs text-muted-foreground">Institute of Engineering & Technology, DAVV Indore</p>
+              <p className="font-semibold text-foreground">IET DAVV Placement Tracker</p>
               <p className="text-sm text-muted-foreground">Made by Kunal Bang</p>
             </div>
           </div>
