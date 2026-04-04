@@ -116,6 +116,10 @@
     @apply border-border;
   }
 
+  html {
+    background: hsl(222 47% 5%);
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Poppins', system-ui, sans-serif;

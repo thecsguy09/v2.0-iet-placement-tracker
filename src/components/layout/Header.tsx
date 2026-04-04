@@ -12,10 +12,10 @@ const Header = () => {
       className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/30 backdrop-blur-md"
     >
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="IET DAVV Logo" className="h-12 w-12 rounded-md object-contain" />
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <img src={logo} alt="IET DAVV Logo" className="h-10 w-10 rounded-md object-contain sm:h-12 sm:w-12" />
           <div className="flex flex-col">
-            <span className="text-lg font-bold text-foreground">IET DAVV Placement Tracker</span>
+            <span className="text-sm font-bold text-foreground sm:text-lg">IET DAVV Placement Tracker</span>
           </div>
         </Link>
 
