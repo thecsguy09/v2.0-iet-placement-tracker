@@ -22,8 +22,7 @@ const Header = () => {
         <div className="flex items-center gap-4">
           <span className="hidden text-sm text-muted-foreground sm:block">Made by Kunal Bang</span>
           <div className="flex items-center gap-2">
-            <a
-              href="https://linkedin.com/in/kunalbang"
+            <a href="https://www.linkedin.com/in/kunalbang09"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-accent"
