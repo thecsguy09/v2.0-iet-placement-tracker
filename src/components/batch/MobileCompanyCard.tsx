@@ -72,20 +72,26 @@ const MobileCompanyCard = ({ record }: MobileCompanyCardProps) => {
 
         {/* Quick stats */}
         <div className="mt-4 flex flex-wrap items-center gap-2">
-          <div className="flex items-center gap-1.5 rounded-full bg-success/10 px-3 py-1 text-sm font-medium text-success">
-            <IndianRupee className="h-3.5 w-3.5" />
-            <span>{record['CTC (in LPA)']} LPA</span>
-          </div>
+          {record['CTC (in LPA)'] && record['CTC (in LPA)'] !== '-' && String(record['CTC (in LPA)']).trim() !== '' && (
+            <div className="flex items-center gap-1.5 rounded-full bg-success/10 px-3 py-1 text-sm font-medium text-success">
+              <IndianRupee className="h-3.5 w-3.5" />
+              <span>CTC: {record['CTC (in LPA)']} LPA</span>
+            </div>
+          )}
 
-          <div className="flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
-            <GraduationCap className="h-3.5 w-3.5" />
-            <span>CGPA: {record['CGPA']}</span>
-          </div>
+          {record['CGPA'] && record['CGPA'] !== '-' && String(record['CGPA']).trim() !== '' && (
+            <div className="flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
+              <GraduationCap className="h-3.5 w-3.5" />
+              <span>CGPA: {record['CGPA']}</span>
+            </div>
+          )}
 
-          <div className="flex items-center gap-1.5 rounded-full bg-warning/10 px-3 py-1 text-sm font-medium text-warning">
-            <Users className="h-3.5 w-3.5" />
-            <span>{record['Total Offers']} Offers</span>
-          </div>
+          {record['Total Offers'] && record['Total Offers'] !== '-' && String(record['Total Offers']).trim() !== '' && (
+            <div className="flex items-center gap-1.5 rounded-full bg-warning/10 px-3 py-1 text-sm font-medium text-warning">
+              <Users className="h-3.5 w-3.5" />
+              <span>Offers: {record['Total Offers']}</span>
+            </div>
+          )}
         </div>
       </button>
 
