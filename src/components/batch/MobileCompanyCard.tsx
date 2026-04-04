@@ -74,7 +74,6 @@ const MobileCompanyCard = ({ record }: MobileCompanyCardProps) => {
         <div className="mt-4 flex flex-wrap items-center gap-2">
           {record['CTC (in LPA)'] && record['CTC (in LPA)'] !== '-' && String(record['CTC (in LPA)']).trim() !== '' && (
             <div className="flex items-center gap-1.5 rounded-full bg-success/10 px-3 py-1 text-sm font-medium text-success">
-              <IndianRupee className="h-3.5 w-3.5" />
               <span>CTC: {record['CTC (in LPA)']} LPA</span>
             </div>
           )}
