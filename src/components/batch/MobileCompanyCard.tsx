@@ -72,20 +72,20 @@ const MobileCompanyCard = ({ record }: MobileCompanyCardProps) => {
 
         {/* Quick stats */}
         <div className="mt-4 flex flex-wrap items-center gap-2">
-          {record['CTC (in LPA)'] && record['CTC (in LPA)'] !== '-' && String(record['CTC (in LPA)']).trim() !== '' && (
+          {record['CTC (in LPA)'] !== undefined && record['CTC (in LPA)'] !== null && record['CTC (in LPA)'] !== '-' && String(record['CTC (in LPA)']).trim() !== '' && (
             <div className="flex items-center gap-1.5 rounded-full bg-success/10 px-3 py-1 text-sm font-medium text-success">
               <span>CTC: {record['CTC (in LPA)']} LPA</span>
             </div>
           )}
 
-          {record['CGPA'] && record['CGPA'] !== '-' && String(record['CGPA']).trim() !== '' && (
+          {record['CGPA'] !== undefined && record['CGPA'] !== null && record['CGPA'] !== '-' && String(record['CGPA']).trim() !== '' && (
             <div className="flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
               <GraduationCap className="h-3.5 w-3.5" />
               <span>CGPA: {record['CGPA']}</span>
             </div>
           )}
 
-          {record['Total Offers'] && record['Total Offers'] !== '-' && String(record['Total Offers']).trim() !== '' && (
+          {record['Total Offers'] !== undefined && record['Total Offers'] !== null && record['Total Offers'] !== '-' && String(record['Total Offers']).trim() !== '' && (
             <div className="flex items-center gap-1.5 rounded-full bg-warning/10 px-3 py-1 text-sm font-medium text-warning">
               <Users className="h-3.5 w-3.5" />
               <span>Offers: {record['Total Offers']}</span>
