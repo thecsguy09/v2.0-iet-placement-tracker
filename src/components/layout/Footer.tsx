@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container py-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="IET DAVV Logo" className="h-10 w-10 rounded-md" />
+            <img src={logo} alt="IET DAVV Logo" className="h-12 w-12 rounded-md object-contain" />
             <div className="text-center sm:text-left">
               <p className="font-semibold text-foreground">IET DAVV Placement Tracker</p>
               <p className="text-sm text-muted-foreground">Made by Kunal Bang</p>
